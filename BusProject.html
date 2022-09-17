@@ -16,41 +16,50 @@
     </div>
 
     <div class="Selection">
-      <div class="StartSelection">
-        <select id="Start" title="dummy">
-          <option value="0">千歳駅</option>
-          <option value="1">南千歳</option>
-          <option value="2">研究棟</option>
-          <option value="3">大学</option>
-        </select>
+      <div class="selection">
+        <div class="StartSelection">
+          <select id="Start" title="dummy">
+            <option value="0">千歳駅</option>
+            <option value="1">南千歳</option>
+            <option value="2">研究棟</option>
+            <option value="3">大学</option>
+          </select>
+        </div>
+        <p>から</p>
+        <div class="GoalSelection">
+          <select id="Goal" title="dummy">
+            <option value="0">千歳駅</option>
+            <option value="1">南千歳</option>
+            <option value="2">研究棟</option>
+            <option value="3">大学</option>
+          </select>
+        </div>
+        <p>まで</p>
       </div>
-      <p>から</p>
-      <div class="GoalSelection">
-        <select id="Goal" title="dummy">
-          <option value="0">千歳駅</option>
-          <option value="1">南千歳</option>
-          <option value="2">研究棟</option>
-          <option value="3">大学</option>
-        </select>
-      </div>
-      <p>まで</p>
     </div>
 
     <div class="time">
-      <input type="time" class="a"/>
+      <input type="time" class="a" />
     </div>
 
     <div class="search">
       <div class="button001">
-        <input type="button" class="SearchButton" onclick="js_check()" value="検索" href="#"></button>
+        <input
+          type="button"
+          class="SearchButton"
+          onclick="js_check()"
+          value="検索"
+          href="#"
+        />
       </div>
     </div>
 
-    <div id="msg">
-        <div class="element">
-            
-        </div>
+    <div id="result">
+      <div class="element">
+        <p id="msg1">12:00</p>
+        <p id="msg2">⇒</p>
+        <p id="msg3">13:00</p>
+      </div>
     </div>
-
   </body>
 </html>

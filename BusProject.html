@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="box1">
+      <p class="p1">科技大バス</p>
+    </div>
+
+    <div class="Selection">
+      <div class="StartSelection">
+        <select id="Start" title="dummy">
+          <option value="0">千歳駅</option>
+          <option value="1">南千歳</option>
+          <option value="2">研究棟</option>
+          <option value="3">大学</option>
+        </select>
+      </div>
+      <p>から</p>
+      <div class="GoalSelection">
+        <select id="Goal" title="dummy">
+          <option value="0">千歳駅</option>
+          <option value="1">南千歳</option>
+          <option value="2">研究棟</option>
+          <option value="3">大学</option>
+        </select>
+      </div>
+      <p>まで</p>
+    </div>
+
+    <div class="time">
+      <input type="time" class="a"/>
+    </div>
+
+    <div class="search">
+      <div class="button001">
+        <input type="button" class="SearchButton" onclick="js_check()" value="検索" href="#"></button>
+      </div>
+    </div>
+
+    <div id="msg">
+        <div class="element">
+            
+        </div>
+    </div>
+
+  </body>
+</html>

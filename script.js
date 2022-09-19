@@ -14,6 +14,15 @@ function TimeComparison(time_obj) {
   let time_array = [];
   let today = new Date();
   let value_today = new Date();
+  let value_con = new Date(); 
+
+  var timeControl = document.querySelector('input[type="time"]');
+  var value_time = timeControl.value;
+  let hm = value_time.split(":");
+  let h = hm[0];
+  let m = hm[1];
+  value_con.setHours(Number(h));
+  value_con.setMinutes(Number(m));
 
   for (i = 0; i < Object.keys(time_obj).length; i++) {
     s_time = time_obj[i];
@@ -25,7 +34,7 @@ function TimeComparison(time_obj) {
       value_today.setHours(Number(hour));
       value_today.setMinutes(Number(mins));
 
-      if (value_today >= today) {
+      if (value_today >= value_con) {
         time_array.push(i);
         if ((time_array.length = 3)) {
           return time_array;
@@ -108,18 +117,10 @@ function js_check() {
       break;
   }
 
-  console.log(StartValue);
-  console.log(GoalValue);
-  console.log(Sta);
-  console.log(Goa);
-
   $.get("http://127.0.0.1:5000", function (json_data) {
     var str = JSON.parse(json_data);
     console.log(str);
-    console.log(str["千歳駅発"][0]);
     array = TimeComparison(str[Sta]);
-    console.log(array[1]);
-    console.log(array[2]);
     i1 = array[0];
     i2 = i1+1;
     i3 = i2+1;

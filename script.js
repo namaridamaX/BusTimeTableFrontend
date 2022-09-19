@@ -1,10 +1,12 @@
 $(document).ready(function () {
-  //   $(".element").hide();
-  $("#result").hide();
+  $("#result1").hide();
+  $("#result2").hide();
+  $("#result3").hide();
 
   $(".SearchButton").click(function () {
-    // $(".element").show();
-    $("#result").show();
+    $("#result1").show();
+    $("#result2").show();
+    $("#result3").show();
   });
 });
 
@@ -116,8 +118,16 @@ function js_check() {
     console.log(str);
     console.log(str["千歳駅発"][0]);
     array = TimeComparison(str[Sta]);
-    i = array[0];
-    document.getElementById("msg1").innerHTML = str[Sta][i];
-    document.getElementById("msg3").innerHTML = str[Goa][i];
+    console.log(array[1]);
+    console.log(array[2]);
+    i1 = array[0];
+    i2 = i1+1;
+    i3 = i2+1;
+    document.getElementById("msg1").innerHTML = str[Sta][i1];
+    document.getElementById("msg3").innerHTML = str[Goa][i1];
+    document.getElementById("msg4").innerHTML = str[Sta][i2];
+    document.getElementById("msg5").innerHTML = str[Sta][i2];
+    document.getElementById("msg6").innerHTML = str[Sta][i3];
+    document.getElementById("msg7").innerHTML = str[Sta][i3];
   });
 }

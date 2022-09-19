@@ -105,30 +105,71 @@ body {
 .GoalSelection select {
   font-size: x-large;
 }
-#result {
+#result1 {
   height: 80px;
-  margin-top: 100px;
+  margin-top: 80px;
   background-color: #fff;
 }
-.element {
+#result2 {
+  height: 80px;
+  margin-top: 20px;
+  background-color: #fff;
+}
+#result3 {
+  height: 80px;
+  margin-top: 20px;
+  background-color: #fff;
+}
+.element1 {
   display: flex;
   width: 220px;
   height: 80px;
   align-items: center;
   margin: 0 auto;
 }
-.element #msg1 {
+.element2 {
+  display: flex;
+  width: 220px;
+  height: 80px;
+  align-items: center;
+  margin: 0 auto;
+}
+.element3 {
+  display: flex;
+  width: 220px;
+  height: 80px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#msg1 {
   font-size: xx-large;
   color: #313131;
 }
-.element #msg2 {
+#msg2 {
   font-size: xx-large;
   color: #313131;
 }
-.element #msg3 {
+#msg3 {
   font-size: xx-large;
   color: #313131;
 }
-.element p {
+#msg4 {
+  font-size: xx-large;
+  color: #313131;
+}
+#msg5 {
+  font-size: xx-large;
+  color: #313131;
+}
+#msg6 {
+  font-size: xx-large;
+  color: #313131;
+}
+#msg7 {
+  font-size: xx-large;
+  color: #313131;
+}
+p {
   text-align: center;
 }

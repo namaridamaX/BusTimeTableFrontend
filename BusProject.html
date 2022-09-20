@@ -18,7 +18,7 @@
     <div class="Selection">
       <div class="selection">
         <div class="StartSelection">
-          <select id="Start" title="dummy">
+          <select id="Start" title="出発地点" onclick="start_disable()">
             <option value="0">千歳駅</option>
             <option value="1">南千歳</option>
             <option value="2">研究棟</option>
@@ -27,11 +27,11 @@
         </div>
         <p>から</p>
         <div class="GoalSelection">
-          <select id="Goal" title="dummy">
+          <select id="Goal" title="到着地点" onclick="goal_disable()">
             <option value="0">千歳駅</option>
             <option value="1">南千歳</option>
             <option value="2">研究棟</option>
-            <option value="3">大学</option>
+            <option value="3" selected>大学</option>
           </select>
         </div>
         <p>まで</p>

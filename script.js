@@ -10,11 +10,19 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(function () {
+  const today = new Date();
+  var element = document.querySelector('input[type="time"]');
+  var hour = today.getHours();
+  var minute = today.getMinutes();
+  var today_time = hour + ":" + minute;
+  element.value = today_time;
+});
+
 function TimeComparison(time_obj) {
   let time_array = [];
-  let today = new Date();
   let value_today = new Date();
-  let value_con = new Date(); 
+  let value_con = new Date();
 
   var timeControl = document.querySelector('input[type="time"]');
   var value_time = timeControl.value;
@@ -122,8 +130,8 @@ function js_check() {
     console.log(str);
     array = TimeComparison(str[Sta]);
     i1 = array[0];
-    i2 = i1+1;
-    i3 = i2+1;
+    i2 = i1 + 1;
+    i3 = i2 + 1;
     document.getElementById("msg1").innerHTML = str[Sta][i1];
     document.getElementById("msg3").innerHTML = str[Goa][i1];
     document.getElementById("msg4").innerHTML = str[Sta][i2];

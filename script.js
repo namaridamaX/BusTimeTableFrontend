@@ -2,12 +2,8 @@ $(document).ready(function () {
   $("#result1").hide();
   $("#result2").hide();
   $("#result3").hide();
-
-  // $(".SearchButton").click(function () {
-  //   $("#result1").show();
-  //   $("#result2").show();
-  //   $("#result3").show();
-  // });
+  $("#result4").hide();
+  $(".loading").hide();
 });
 
 $(document).ready(function () {
@@ -18,6 +14,15 @@ $(document).ready(function () {
   var today_time = hour + ":" + minute;
   element.value = today_time;
 });
+
+function now_time(){
+  const today = new Date();
+  var element = document.querySelector('input[type="time"]');
+  var hour = ("0"+today.getHours()).slice(-2);
+  var minute = ("0"+today.getMinutes()).slice(-2);
+  var today_time = hour + ":" + minute;
+  element.value = today_time;
+}
 
 function TimeComparison(time_obj) {
   let time_array = [];
@@ -113,6 +118,11 @@ function goal_disable() {
 }
 
 function js_check() {
+  $("#result4").hide();
+  $("#result1").hide();
+  $("#result2").hide();
+  $("#result3").hide();
+  $(".loading").show();
   var StartValue = $("#Start").val();
   var GoalValue = $("#Goal").val();
   switch (StartValue) {
@@ -188,6 +198,9 @@ function js_check() {
   $.get("http://127.0.0.1:5000", function (json_data) {
     var str = JSON.parse(json_data);
     array = TimeComparison(str[Sta]);
+
+    $(".loading").hide();
+
     i1 = array[0];
     i2 = i1 + 1;
     i3 = i2 + 1;
@@ -196,7 +209,7 @@ function js_check() {
       document.getElementById("msg1").innerHTML = str[Sta][i1];
       document.getElementById("msg3").innerHTML = str[Goa][i1];
     } else if (str[Sta][i1] == null) {
-      $("#result1").hide();
+      $("#result4").show();
     }
     if (str[Sta][i2] != null) {
       $("#result2").show();

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <link
+      href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +16,7 @@
   </head>
   <body>
     <div class="box1">
-      <p class="p1">科技大バス</p>
+      <b>科技大バス</b>
     </div>
 
     <div class="Selection">
@@ -25,7 +29,7 @@
             <option value="3">大学</option>
           </select>
         </div>
-        <p>から</p>
+        <i class="fa-solid fa-arrow-right"></i>
         <div class="GoalSelection">
           <select id="Goal" title="到着地点" onclick="goal_disable()">
             <option value="0">千歳駅</option>
@@ -34,24 +38,26 @@
             <option value="3" selected>大学</option>
           </select>
         </div>
-        <p>まで</p>
       </div>
     </div>
 
     <div class="time">
-      <input type="time" id="a" value="" />
+      <div class="box">
+        <input type="time" id="a" value="" />
+        <a href="#" onclick="now_time()">
+          <i class="fa-sharp fa-solid fa-arrows-rotate fa-2x"></i>
+        </a>
+      </div>
     </div>
 
     <div class="search">
       <div class="button001">
-        <input
-          type="button"
-          class="SearchButton"
-          onclick="js_check()"
-          value="検索"
-          href="#"
-        />
+        <a href="#" onclick="js_check()">検索</a>
       </div>
+    </div>
+
+    <div class="loading">
+      <div class="circle"></div>
     </div>
 
     <div id="result1">
@@ -74,6 +80,9 @@
         <p id="msg2">⇒</p>
         <p id="msg7"></p>
       </div>
+    </div>
+    <div id="result4">
+      <b>バスがありません！</b>
     </div>
   </body>
 </html>

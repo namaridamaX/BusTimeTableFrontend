@@ -1,10 +1,10 @@
 body {
-  background-color: rgb(0, 45, 90);
+  background-color: #f5f5dc;
 }
-.box1 .p1 {
+.box1 b {
   text-align: center;
   font-size: 40px;
-  color: darkgoldenrod;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
@@ -13,24 +13,18 @@ body {
   top: 0%;
   padding: 0;
   margin: 0;
-  color: #5989cf;
-  background: #c6e4ff;
-  border-bottom: solid 6px #aac5de;
-  border-radius: 9px;
+  background: linear-gradient(#8ed2e1, #2ea7c4);
+  text-align: center;
 }
 .content {
   position: relative;
-  /* top: 50%; */
   margin-top: 10px;
 }
 .checkbox {
   display: flex;
 }
 .inner button {
-  background: #eee;
   border-radius: 3px;
-  /* position: relative; */
-  /* display: flex; */
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
@@ -46,39 +40,40 @@ body {
 }
 .time {
   text-align: center;
+  display: flex;
+  margin-top: 20px;
+}
+.time .box {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+.box {
+  position: relative;
 }
 .time input {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  /* margin-top: 20px; */
-  width: 320px;
+  margin-right: 3%;
+  width: 250px;
   height: 40px;
   font-size: xx-large;
   text-align: center;
+  font-weight: bold;
 }
-.button001 button {
-  background: #eee;
-  border-radius: 3px;
-  position: relative;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 280px;
-  padding: 10px 25px;
-  color: #313131;
-  transition: 0.3s ease-in-out;
-  font-weight: 500;
-}
-.button001 button:hover {
-  background: #313131;
-  color: #fff;
-}
-.button001 .SearchButton {
-  width: 325px;
+
+.time a {
+  margin: 0;
+  size: 15px;
+  width: 44px;
   height: 44px;
+  background: rgb(149, 202, 252);
+  background: linear-gradient(
+    270deg,
+    rgba(149, 202, 252, 1) 0%,
+    rgba(107, 182, 255, 1) 100%
+  );
+  color: #fff;
+  border-radius: 10px;
 }
 .search {
   position: relative;
@@ -87,23 +82,31 @@ body {
 }
 .Selection {
   align-items: center;
-  font-size: x-large;
-  color: #eee;
+  font-size: xx-large;
+  color: #313131;
   position: relative;
   text-align: center;
+  margin-top: 20px;
 }
 .selection {
   display: flex;
   margin: 0 auto;
-  width: 288px;
+  width: 310px;
+  height: 55px;
   text-align: center;
   align-items: center;
 }
 .StartSelection select {
-  font-size: x-large;
+  font-size: xx-large;
+  margin-right: 20px;
 }
 .GoalSelection select {
-  font-size: x-large;
+  font-size: xx-large;
+  margin-left: 20px;
+}
+select,
+option {
+  border: rgb(149, 202, 252) thick double;
 }
 #result1 {
   height: 80px;
@@ -119,6 +122,11 @@ body {
   height: 80px;
   margin-top: 20px;
   background-color: #fff;
+}
+#result4 {
+  font-size: x-large;
+  margin-top: 100px;
+  text-align: center;
 }
 .element1 {
   display: flex;
@@ -172,4 +180,65 @@ body {
 }
 p {
   text-align: center;
+}
+.button001 a {
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 220px;
+  padding: 10px 25px;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  background: rgb(149, 202, 252);
+  background: linear-gradient(
+    270deg,
+    rgba(149, 202, 252, 1) 0%,
+    rgba(107, 182, 255, 1) 100%
+  );
+  text-decoration: none;
+}
+
+.button001 a:hover {
+  background: rgb(117, 188, 255);
+  background: linear-gradient(
+    270deg,
+    rgba(117, 188, 255, 1) 0%,
+    rgba(62, 159, 252, 1) 100%
+  );
+}
+
+.fa-sharp {
+  text-align: center;
+  margin-top: 5px;
+  color: #fff;
+}
+
+.loading {
+  margin-top: 50px;
+  height: 300px;
+}
+.loading .circle {
+  display: block;
+  position: relative;
+  top: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border: 7px solid rgba(149, 202, 252, 1);
+  border-top: 7px solid #fff;
+  border-radius: 50px;
+  animation: loading 700ms linear 0ms infinite normal both;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

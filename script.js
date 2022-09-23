@@ -9,17 +9,17 @@ $(document).ready(function () {
 $(document).ready(function () {
   const today = new Date();
   var element = document.querySelector('input[type="time"]');
-  var hour = ("0"+today.getHours()).slice(-2);
-  var minute = ("0"+today.getMinutes()).slice(-2);
+  var hour = ("0" + today.getHours()).slice(-2);
+  var minute = ("0" + today.getMinutes()).slice(-2);
   var today_time = hour + ":" + minute;
   element.value = today_time;
 });
 
-function now_time(){
+function now_time() {
   const today = new Date();
   var element = document.querySelector('input[type="time"]');
-  var hour = ("0"+today.getHours()).slice(-2);
-  var minute = ("0"+today.getMinutes()).slice(-2);
+  var hour = ("0" + today.getHours()).slice(-2);
+  var minute = ("0" + today.getMinutes()).slice(-2);
   var today_time = hour + ":" + minute;
   element.value = today_time;
 }

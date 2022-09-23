@@ -4,6 +4,7 @@ $(document).ready(function () {
   $("#result3").hide();
   $("#result4").hide();
   $(".loading").hide();
+  // $(".value").hide();
 });
 
 $(document).ready(function () {
@@ -118,6 +119,7 @@ function goal_disable() {
 }
 
 function js_check() {
+  $(".value").hide();
   $("#result4").hide();
   $("#result1").hide();
   $("#result2").hide();
@@ -204,24 +206,64 @@ function js_check() {
     i1 = array[0];
     i2 = i1 + 1;
     i3 = i2 + 1;
+
     if (str[Sta][i1] != null) {
       $("#result1").show();
-      document.getElementById("msg1").innerHTML = str[Sta][i1];
-      document.getElementById("msg3").innerHTML = str[Goa][i1];
+      var start_hour1 = str[Sta][i1].split(":");
+      var goal_hour1 = str[Goa][i1].split(":");
+      if (start_hour1[0] < 10 && goal_hour1[0] < 10) {
+        document.getElementById("msg1").innerHTML =
+          "&nbsp;" + str[Sta][i1] + "&nbsp;";
+        document.getElementById("msg3").innerHTML =
+          "&nbsp;" + str[Goa][i1] + "&nbsp;";
+      } else if (start_hour1[0] < 10) {
+        document.getElementById("msg1").innerHTML =
+          "&nbsp;" + str[Sta][i1] + "&nbsp;";
+        document.getElementById("msg3").innerHTML = str[Goa][i1];
+      } else {
+        document.getElementById("msg1").innerHTML = str[Sta][i1];
+        document.getElementById("msg3").innerHTML = str[Goa][i1];
+      }
     } else if (str[Sta][i1] == null) {
       $("#result4").show();
     }
     if (str[Sta][i2] != null) {
       $("#result2").show();
-      document.getElementById("msg4").innerHTML = str[Sta][i2];
-      document.getElementById("msg5").innerHTML = str[Goa][i2];
+      var start_hour2 = str[Sta][i2].split(":");
+      var goal_hour2 = str[Goa][i2].split(":");
+      if (start_hour2[0] < 10 && goal_hour2[0] < 10) {
+        document.getElementById("msg4").innerHTML =
+          "&nbsp;" + str[Sta][i2] + "&nbsp;";
+        document.getElementById("msg5").innerHTML =
+          "&nbsp;" + str[Goa][i2] + "&nbsp;";
+      } else if (start_hour2[0] < 10) {
+        document.getElementById("msg4").innerHTML =
+          "&nbsp;" + str[Sta][i2] + "&nbsp;";
+        document.getElementById("msg5").innerHTML = str[Goa][i2];
+      } else {
+        document.getElementById("msg4").innerHTML = str[Sta][i2];
+        document.getElementById("msg5").innerHTML = str[Goa][i2];
+      }
     } else if (str[Sta][i2] == null) {
       $("#result2").hide();
     }
     if (str[Sta][i3] != null) {
       $("#result3").show();
-      document.getElementById("msg6").innerHTML = str[Sta][i3];
-      document.getElementById("msg7").innerHTML = str[Goa][i3];
+      var start_hour3 = str[Sta][i3].split(":");
+      var goal_hour3 = str[Goa][i3].split(":");
+      if (start_hour3[0] < 10 && goal_hour3[0] < 10) {
+        document.getElementById("msg6").innerHTML =
+          "&nbsp;" + str[Sta][i3] + "&nbsp;";
+        document.getElementById("msg7").innerHTML =
+          "&nbsp;" + str[Goa][i3] + "&nbsp;";
+      } else if (start_hour3[0] < 10) {
+        document.getElementById("msg6").innerHTML =
+          "&nbsp;" + str[Sta][i3] + "&nbsp;";
+        document.getElementById("msg7").innerHTML = str[Goa][i3];
+      } else {
+        document.getElementById("msg6").innerHTML = str[Sta][i3];
+        document.getElementById("msg7").innerHTML = str[Goa][i3];
+      }
     } else if (str[Sta][i3] == null) {
       $("#result3").hide();
     }

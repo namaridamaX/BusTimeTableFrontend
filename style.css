@@ -3,28 +3,23 @@ body {
   background-color: #fff;
 }
 .box1 b {
-  text-align: center;
-  font-size: 40px;
+  font-size: 5vh;
   color: #fff;
-  margin: 0;
-  padding: 0;
 }
 .box1 {
-  position: relative;
-  top: 0%;
-  padding: 0;
-  margin: 0 0;
   background-color: #1e90ff;
   text-align: center;
+  height: 10vh;
+  width: 100%;
+  /* vertical-align: middle; */
+  display: table;
 }
-.content {
-  position: relative;
-  margin-top: 10px;
+#tetete {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
 }
-.checkbox {
-  display: flex;
-}
-.inner button {
+/* .inner button {
   border-radius: 3px;
   justify-content: space-around;
   align-items: center;
@@ -34,15 +29,15 @@ body {
   color: #313131;
   transition: 0.3s ease-in-out;
   font-weight: 500;
-}
-.inner button:hover {
+} */
+/* .inner button:hover {
   background: #313131;
   color: #fff;
-}
+} */
 .time {
   text-align: center;
   display: flex;
-  margin-top: 20px;
+  margin-top: 0;
 }
 .time .box {
   margin-left: auto;
@@ -51,30 +46,7 @@ body {
 }
 .box {
   position: relative;
-}
-.time input {
-  position: relative;
-  margin-right: 3%;
-  width: 250px;
-  height: 40px;
-  font-size: xx-large;
-  text-align: center;
-  font-weight: bold;
-}
-
-.time a {
-  margin: 0;
-  size: 15px;
-  width: 44px;
-  height: 44px;
-  background-color: #1e90ff;
-  color: #fff;
-  border-radius: 10px;
-}
-.search {
-  position: relative;
-  margin-top: 20px;
-  text-align: center;
+  width: 80vw;
 }
 .Selection {
   align-items: center;
@@ -87,142 +59,199 @@ body {
 .selection {
   display: flex;
   margin: 0 auto;
-  width: 310px;
-  height: 55px;
+  width: 90vw;
+  height: 12vh;
   text-align: center;
   align-items: center;
+  font-size: 5.5vh;
+}
+select {
+  text-align: center;
+  appearance: none;
 }
 .StartSelection select {
-  font-size: xx-large;
-  margin-right: 20px;
+  width: 40vw;
+  height: 5.5vh;
+  font-size: 5vh;
+  border: #313131 solid 0.1vh;
+}
+option {
+  font-size: 1vh;
 }
 .GoalSelection select {
-  font-size: xx-large;
-  margin-left: 20px;
+  width: 40vw;
+  height: 5.5vh;
+  font-size: 5vh;
+  border: #313131 solid 0.1vh;
 }
-/* select,
-option {
-  border: #1E90FF 2px solid;
-} */
-#result1 {
-  height: 80px;
-  margin-top: 50px;
-  background: #1e90ff;
+.time {
+  height: 10vh;
 }
-#result2 {
-  height: 80px;
+.time input {
+  position: relative;
+  margin-right: 3%;
+  width: 65vw;
+  height: 7vh;
+  font-size: 5vh;
+  text-align: center;
+  font-weight: bold;
+  border: #313131 solid 0.1vh;
+}
+.box a {
+  margin: 0;
+  width: 15vw;
+  height: 7vh;
+  background-color: #1e90ff;
+  border-radius: 2vh;
+  font-size: 5vh;
+}
+.fa-sharp {
+  color: #fff;
+}
+i {
+  color: #1e90ff;
+}
+.search {
+  position: relative;
   margin-top: 20px;
-  background: #1e90ff;
-}
-#result3 {
-  height: 80px;
-  margin-top: 20px;
-  background: #1e90ff;
-}
-#result4 {
-  font-size: x-large;
-  margin-top: 60px;
   text-align: center;
-  display: block;
 }
-.element1 {
-  display: flex;
-  width: 230px;
-  height: 80px;
-  align-items: center;
-  margin: 0 auto;
-}
-.element2 {
-  display: flex;
-  width: 230px;
-  height: 80px;
-  align-items: center;
-  margin: 0 auto;
-}
-.element3 {
-  display: flex;
-  width: 230px;
-  height: 80px;
-  align-items: center;
-  margin: 0 auto;
-}
-.msg1 {
-  text-align: center;
-  width: 99.55px;
-}
-.msg3 {
-  text-align: center;
-  width: 99.55px;
-}
-.msg4 {
-  text-align: center;
-  width: 99.55px;
-}
-.msg5 {
-  text-align: center;
-  width: 99.55px;
-}
-.msg6 {
-  text-align: center;
-  width: 99.55px;
-}
-.msg7 {
-  text-align: center;
-  width: 99.55px;
-}
-
-#msg1 {
-  font-size: xx-large;
-  color: #fff;
-  font-weight: bold;
-}
-#msg2 {
-  font-size: xx-large;
-  color: #fff;
-  font-weight: bold;
-}
-#msg3 {
-  font-size: xx-large;
-  color: #fff;
-  font-weight: bold;
-}
-#msg4 {
-  font-size: xx-large;
-  color: #fff;
-  font-weight: bold;
-}
-#msg5 {
-  font-size: xx-large;
-  color: #fff;
-  font-weight: bold;
-}
-#msg6 {
-  font-size: xx-large;
-  color: #fff;
-  font-weight: bold;
-}
-#msg7 {
-  font-size: xx-large;
-  color: #fff;
-  font-weight: bold;
-}
-p {
-  text-align: center;
+.button001 {
+  height: 5vh;
 }
 .button001 a {
+  width: 60vw;
+  height: 3vh;
+  font-size: 3vh;
   border-radius: 3px;
   position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  max-width: 220px;
+  /* max-width: 220px; */
   padding: 10px 25px;
   color: #fff;
   transition: 0.3s ease-in-out;
   font-weight: 600;
   background: #1e90ff;
   text-decoration: none;
+}
+.value {
+  font-size: 3vh;
+  margin-top: 10vh;
+  text-align: center;
+  color: darkgray;
+}
+#result1 {
+  height: 10vh;
+  margin-top: 10vh;
+  background: #1e90ff;
+}
+#result2 {
+  height: 10vh;
+  margin-top: 5vh;
+  background: #1e90ff;
+}
+#result3 {
+  height: 10vh;
+  margin-top: 5vh;
+  background: #1e90ff;
+}
+#result4 {
+  font-size: 3vh;
+  margin-top: 10vh;
+  text-align: center;
+  display: block;
+}
+.element1 {
+  display: flex;
+  width: 82.6vw;
+  height: 10vh;
+  align-items: center;
+  margin: 0 auto;
+}
+.element2 {
+  display: flex;
+  width: 82.6vw;
+  height: 10vh;
+  align-items: center;
+  margin: 0 auto;
+}
+.element3 {
+  display: flex;
+  width: 82.6vw;
+  height: 10vh;
+  align-items: center;
+  margin: 0 auto;
+}
+.msg1 {
+  text-align: center;
+  width: 20vw;
+  font-size: 6vh;
+}
+.msg3 {
+  text-align: center;
+  width: 20vw;
+  font-size: 6vh;
+}
+.msg4 {
+  text-align: center;
+  width: 20vw;
+}
+.msg5 {
+  text-align: center;
+  width: 20vw;
+}
+.msg6 {
+  text-align: center;
+  width: 20vw;
+}
+.msg7 {
+  text-align: center;
+  width: 20vw;
+}
+
+#msg1 {
+  font-size: 5vh;
+  color: #fff;
+  font-weight: bold;
+}
+#msg2 {
+  font-size: 7vh;
+  color: #fff;
+  font-weight: bold;
+}
+#msg3 {
+  font-size: 5vh;
+  color: #fff;
+  font-weight: bold;
+}
+#msg4 {
+  font-size: 5vh;
+  color: #fff;
+  font-weight: bold;
+}
+#msg5 {
+  font-size: 5vh;
+  color: #fff;
+  font-weight: bold;
+}
+#msg6 {
+  font-size: 5vh;
+  color: #fff;
+  font-weight: bold;
+}
+#msg7 {
+  font-size: 5vh;
+  color: #fff;
+  font-weight: bold;
+}
+p {
+  text-align: center;
+}
+pre {
+  text-align: center;
 }
 
 /* .button001 a:hover {
@@ -234,18 +263,9 @@ p {
   );
 } */
 
-.fa-sharp {
-  text-align: center;
-  margin-top: 5px;
-  color: #fff;
-}
-i {
-  color: #1e90ff;
-}
-
 .loading {
-  margin-top: 50px;
-  height: 300px;
+  margin-top: 10vh;
+  height: 30vh;
 }
 .loading .circle {
   display: block;

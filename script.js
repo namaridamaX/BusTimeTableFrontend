@@ -4,7 +4,6 @@ $(document).ready(function () {
   $("#result3").hide();
   $("#result4").hide();
   $(".loading").hide();
-  // $(".value").hide();
 });
 
 $(document).ready(function () {
@@ -29,6 +28,7 @@ function TimeComparison(time_obj) {
   let time_array = [];
   let value_today = new Date();
   let value_con = new Date();
+  let num = 0;
 
   var timeControl = document.querySelector('input[type="time"]');
   var value_time = timeControl.value;
@@ -40,7 +40,8 @@ function TimeComparison(time_obj) {
 
   for (i = 0; i < Object.keys(time_obj).length; i++) {
     s_time = time_obj[i];
-    if (s_time != null) {
+
+    if (s_time != "-" && s_time != null) {
       let hour_mins = s_time.split(":");
       let hour = hour_mins[0];
       let mins = hour_mins[1];
@@ -50,11 +51,16 @@ function TimeComparison(time_obj) {
 
       if (value_today >= value_con) {
         time_array.push(i);
-        return time_array;
+        num = num + 1;
+        if (num == 3) {
+          return time_array;
+        }
       }
     }
   }
-  time_array.push(100);
+  for (j = 0; j < 3 - num; j++) {
+    time_array.push(100);
+  }
   return time_array;
 }
 
@@ -117,14 +123,17 @@ function goal_disable() {
       break;
   }
 }
-
-function js_check() {
+function hide_class() {
   $(".value").hide();
   $("#result4").hide();
   $("#result1").hide();
   $("#result2").hide();
   $("#result3").hide();
   $(".loading").show();
+}
+
+function js_check() {
+  hide_class();
   var StartValue = $("#Start").val();
   var GoalValue = $("#Goal").val();
   switch (StartValue) {
@@ -196,16 +205,17 @@ function js_check() {
       }
       break;
   }
-
-  $.get("http://127.0.0.1:5000", function (json_data) {
+  //http:の接続先を変更
+  $.get("http://54.80.43.238", function (json_data) {
     var str = JSON.parse(json_data);
     array = TimeComparison(str[Sta]);
+    console.log(array);
 
     $(".loading").hide();
 
     i1 = array[0];
-    i2 = i1 + 1;
-    i3 = i2 + 1;
+    i2 = array[1];
+    i3 = array[2];
 
     if (str[Sta][i1] != null) {
       $("#result1").show();

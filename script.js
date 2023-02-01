@@ -24,6 +24,7 @@ function now_time() {
   element.value = today_time;
 }
 
+//現在時間とPDFから取得した時間を比較して一番近いPDFの時間を返す
 function TimeComparison(time_obj) {
   let time_array = [];
   let value_today = new Date();
@@ -35,9 +36,14 @@ function TimeComparison(time_obj) {
   let hm = value_time.split(":");
   let h = hm[0];
   let m = hm[1];
+
+  //value_con：画面に入力した時間
   value_con.setHours(Number(h));
   value_con.setMinutes(Number(m));
 
+  console.log(time_obj);
+
+  //value_todey：PDFの時間
   for (i = 0; i < Object.keys(time_obj).length; i++) {
     s_time = time_obj[i];
 
@@ -49,6 +55,7 @@ function TimeComparison(time_obj) {
       value_today.setHours(Number(hour));
       value_today.setMinutes(Number(mins));
 
+      //候補が3つ揃ったらreturnする
       if (value_today >= value_con) {
         time_array.push(i);
         num = num + 1;
@@ -136,20 +143,22 @@ function js_check() {
   hide_class();
   var StartValue = $("#Start").val();
   var GoalValue = $("#Goal").val();
+
+  //発着地点の取得を01で判定
   switch (StartValue) {
     case "0":
       switch (GoalValue) {
         case "1":
-          var Sta = "千歳駅発";
-          var Goa = "南千歳駅発";
+          var Sta = "千歳駅発Chitose Sta.";
+          var Goa = "南千歳駅発Minami-Chitose Sta.";
           break;
         case "2":
-          var Sta = "千歳駅発";
-          var Goa = "研究実験棟発";
+          var Sta = "千歳駅発Chitose Sta.";
+          var Goa = "研究実験棟発RESEARCH CAMPUS";
           break;
         case "3":
-          var Sta = "千歳駅発";
-          var Goa = "本部棟着";
+          var Sta = "千歳駅発Chitose Sta.";
+          var Goa = "本部棟着MAIN CAMPUS";
           break;
       }
       break;
@@ -157,16 +166,16 @@ function js_check() {
     case "1":
       switch (GoalValue) {
         case "2":
-          var Sta = "南千歳駅発";
-          var Goa = "研究実験棟発";
+          var Sta = "南千歳駅発Minami-Chitose Sta.";
+          var Goa = "研究実験棟発RESEARCH CAMPUS";
           break;
         case "3":
-          var Sta = "南千歳駅発";
-          var Goa = "本部棟着";
+          var Sta = "南千歳駅発Minami-Chitose Sta.";
+          var Goa = "本部棟着MAIN CAMPUS";
           break;
         case "0":
-          var Sta = "南千歳駅着";
-          var Goa = "千歳駅着";
+          var Sta = "南千歳駅着Minami-Chitose Sta.";
+          var Goa = "千歳駅着Chitose Sta.";
           break;
       }
       break;
@@ -174,16 +183,16 @@ function js_check() {
     case "2":
       switch (GoalValue) {
         case "3":
-          var Sta = "研究実験棟発";
-          var Goa = "本部棟着";
+          var Sta = "研究実験棟発RESEARCH CAMPUS";
+          var Goa = "本部棟着MAIN CAMPUS";
           break;
         case "1":
-          var Sta = "研究実験棟着";
-          var Goa = "南千歳駅着";
+          var Sta = "研究実験棟着RESEARCH CAMPUS";
+          var Goa = "南千歳駅着Minami-Chitose Sta.";
           break;
         case "0":
-          var Sta = "研究実験棟着";
-          var Goa = "千歳駅着";
+          var Sta = "研究実験棟着RESEARCH CAMPUS";
+          var Goa = "千歳駅着Chitose Sta.";
           break;
       }
       break;
@@ -191,23 +200,29 @@ function js_check() {
     case "3":
       switch (GoalValue) {
         case "0":
-          var Sta = "本部棟発";
-          var Goa = "千歳駅着";
+          var Sta = "本部棟着MAIN CAMPUS";
+          var Goa = "千歳駅着Chitose Sta.";
           break;
         case "1":
-          var Sta = "本部棟発";
-          var Goa = "南千歳駅着";
+          var Sta = "本部棟着MAIN CAMPUS";
+          var Goa = "南千歳駅着Minami-Chitose Sta.";
           break;
         case "2":
-          var Sta = "本部棟発";
-          var Goa = "研究実験棟着";
+          var Sta = "本部棟着MAIN CAMPUS";
+          var Goa = "研究実験棟着RESEARCH CAMPUS";
           break;
       }
       break;
   }
   //http:の接続先を変更
-  $.get("http://54.80.43.238", function (json_data) {
+  $.get("http://54.224.148.164/", function (json_data) {
     var str = JSON.parse(json_data);
+    var Sta1 = "千歳駅発Chitose Sta." ;
+    // var Sta2 = "千歳駅発 Chitose Sta.";
+    // var Sta3 = "千歳駅発¥rChitose Sta.";
+    console.log(str);
+    console.log(str[/千歳駅発/]);
+    console.log(str[Sta]);
     array = TimeComparison(str[Sta]);
     console.log(array);
 

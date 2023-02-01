@@ -149,16 +149,16 @@ function js_check() {
     case "0":
       switch (GoalValue) {
         case "1":
-          var Sta = "千歳駅発Chitose Sta.";
-          var Goa = "南千歳駅発Minami-Chitose Sta.";
+          var Sta = "千歳駅発\rChitose Sta.";
+          var Goa = "南千歳駅発\rMinami-Chitose Sta.";
           break;
         case "2":
-          var Sta = "千歳駅発Chitose Sta.";
-          var Goa = "研究実験棟発RESEARCH CAMPUS";
+          var Sta = "千歳駅発\rChitose Sta.";
+          var Goa = "研究実験棟発\rRESEARCH CAMPUS";
           break;
         case "3":
-          var Sta = "千歳駅発Chitose Sta.";
-          var Goa = "本部棟着MAIN CAMPUS";
+          var Sta = "千歳駅発\rChitose Sta.";
+          var Goa = "本部棟着\rMAIN CAMPUS";
           break;
       }
       break;
@@ -166,16 +166,16 @@ function js_check() {
     case "1":
       switch (GoalValue) {
         case "2":
-          var Sta = "南千歳駅発Minami-Chitose Sta.";
-          var Goa = "研究実験棟発RESEARCH CAMPUS";
+          var Sta = "南千歳駅発\rMinami-Chitose Sta.";
+          var Goa = "研究実験棟発\rRESEARCH CAMPUS";
           break;
         case "3":
-          var Sta = "南千歳駅発Minami-Chitose Sta.";
-          var Goa = "本部棟着MAIN CAMPUS";
+          var Sta = "南千歳駅発\rMinami-Chitose Sta.";
+          var Goa = "本部棟着\rMAIN CAMPUS";
           break;
         case "0":
-          var Sta = "南千歳駅着Minami-Chitose Sta.";
-          var Goa = "千歳駅着Chitose Sta.";
+          var Sta = "南千歳駅着\rMinami-Chitose Sta.";
+          var Goa = "千歳駅着\rChitose Sta.";
           break;
       }
       break;
@@ -183,16 +183,16 @@ function js_check() {
     case "2":
       switch (GoalValue) {
         case "3":
-          var Sta = "研究実験棟発RESEARCH CAMPUS";
-          var Goa = "本部棟着MAIN CAMPUS";
+          var Sta = "研究実験棟発\rRESEARCH CAMPUS";
+          var Goa = "本部棟着\rMAIN CAMPUS";
           break;
         case "1":
-          var Sta = "研究実験棟着RESEARCH CAMPUS";
-          var Goa = "南千歳駅着Minami-Chitose Sta.";
+          var Sta = "研究実験棟着\rRESEARCH CAMPUS";
+          var Goa = "南千歳駅着\rMinami-Chitose Sta.";
           break;
         case "0":
-          var Sta = "研究実験棟着RESEARCH CAMPUS";
-          var Goa = "千歳駅着Chitose Sta.";
+          var Sta = "研究実験棟着\rRESEARCH CAMPUS";
+          var Goa = "千歳駅着\rChitose Sta.";
           break;
       }
       break;
@@ -200,29 +200,27 @@ function js_check() {
     case "3":
       switch (GoalValue) {
         case "0":
-          var Sta = "本部棟着MAIN CAMPUS";
-          var Goa = "千歳駅着Chitose Sta.";
+          var Sta = "本部棟着\rMAIN CAMPUS";
+          var Goa = "千歳駅着\rChitose Sta.";
           break;
         case "1":
-          var Sta = "本部棟着MAIN CAMPUS";
-          var Goa = "南千歳駅着Minami-Chitose Sta.";
+          var Sta = "本部棟着\rMAIN CAMPUS";
+          var Goa = "南千歳駅着\rMinami-Chitose Sta.";
           break;
         case "2":
-          var Sta = "本部棟着MAIN CAMPUS";
-          var Goa = "研究実験棟着RESEARCH CAMPUS";
+          var Sta = "本部棟着\rMAIN CAMPUS";
+          var Goa = "研究実験棟着\rRESEARCH CAMPUS";
           break;
       }
       break;
   }
   //http:の接続先を変更
-  $.get("http://54.224.148.164/", function (json_data) {
+  $.get("http://52.90.198.72/", function (json_data) {
+    //jsonデータを配列にキャスト
     var str = JSON.parse(json_data);
-    var Sta1 = "千歳駅発Chitose Sta." ;
-    // var Sta2 = "千歳駅発 Chitose Sta.";
-    // var Sta3 = "千歳駅発¥rChitose Sta.";
-    console.log(str);
-    console.log(str[/千歳駅発/]);
-    console.log(str[Sta]);
+    // console.log(str);
+    // console.log(str["千歳駅発\rChitose Sta."]);
+    // console.log(str[Sta]);
     array = TimeComparison(str[Sta]);
     console.log(array);
 

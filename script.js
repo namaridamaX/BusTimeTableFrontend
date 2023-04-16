@@ -215,10 +215,10 @@ function js_check() {
       break;
   }
   //http:の接続先を変更
-  $.get("http://52.90.198.72/", function (json_data) {
+  $.get("http://172.17.9.75:8080/", function (json_data) {
     //jsonデータを配列にキャスト
     var str = JSON.parse(json_data);
-    // console.log(str);
+    console.log(str);
     // console.log(str["千歳駅発\rChitose Sta."]);
     // console.log(str[Sta]);
     array = TimeComparison(str[Sta]);

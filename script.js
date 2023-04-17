@@ -200,15 +200,15 @@ function js_check() {
     case "3":
       switch (GoalValue) {
         case "0":
-          var Sta = "本部棟着\rMAIN CAMPUS";
+          var Sta = "本部棟発\rMAIN CAMPUS";
           var Goa = "千歳駅着\rChitose Sta.";
           break;
         case "1":
-          var Sta = "本部棟着\rMAIN CAMPUS";
+          var Sta = "本部棟発\rMAIN CAMPUS";
           var Goa = "南千歳駅着\rMinami-Chitose Sta.";
           break;
         case "2":
-          var Sta = "本部棟着\rMAIN CAMPUS";
+          var Sta = "本部棟発\rMAIN CAMPUS";
           var Goa = "研究実験棟着\rRESEARCH CAMPUS";
           break;
       }
